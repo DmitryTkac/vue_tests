@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js tests 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <h1>{{ greet("Not bad") }} </h1>
+        <p>Name: {{ name }} </p>
+        <p>Job: {{ job }} </p>
+        <a v-bind:href='website'> nedius</a>
+        <input type="text" v-bind:value="greet('norm')">
+        <p v-html="websiteTag"></p><br>
+        <h1>EVENTS</h1>
+        <h3>@ = v-on <br>   </h3>
+        <button @dblclick="add">Add Year</button>
+        <button @click="subtract">Subtract Year</button>
+        <p>Year: {{ year }}</p>
+
+        <div id="canvas" @mousemove="updateXY">
+            {{ x }},
+            {{ y }}
+        </div><br>
+        <div id="canvas" @mousemove.once="updateXY">
+                {{ x }},
+                {{ y }}
+            </div><br>
+        <h1>EVENTS MODIFIER + KEYBOARD</h1>
+        <a v-on:click.prevent="clickMe" v-bind:href="website">AAAAAAAAAAAAAaaaaaaaa</a>
+        <input type="text" @keyup.alt.enter.q.w.r.p="log"><br>
+        <h1>DATA BINDING</h1>
+        <label>Name: </label>
+        <input type="text" v-model="name">
+        <span> {{ name }} </span> <br>
+        <h1>Dynamic css</h1>
+        <div  @click="changeColor" v-bind:class="{red: red}">
+            Hi!
+        </div>
+        <h3>some computed!</h3>
+        <p>Instead of a computed property, 
+            we can define the same function as a method instead. For 
+            the end result, the two approaches are indeed exactly the same. 
+            However, the difference is that computed properties are cached based 
+            on their reactive dependencies. A computed property will only re-evaluate 
+            when some of its reactive dependencies have changed. This means as long as message has not changed,
+             multiple access to the reversedMessage computed property will immediately return the previously computed result 
+             without having to run the function again.</p>
+        <span>Test with Time: {{ showNow }}</span>
+        <br>
+        <h1>COMPONENTS?</h1>
+        <div>
+            <saggan></saggan>
+            <saggan></saggan>
+            <saggan></saggan>
+        </div>
+        <br>
+        <h1>REFS</h1>
+        <input type="text" ref="input">
+        <button @click="readRefs">Send</button>
+        <br><p>
+            food: {{ output }}
+        </p>
+        <div ref="saggan">Actually not a lorem ipsum</div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

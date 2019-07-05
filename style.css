@@ -1,0 +1,29 @@
+#canvas {
+    width: 600px;   
+    padding: 200px 20px;
+    text-align: center;
+    border: 1pt solid #333;
+}
+
+.red {
+    background: red;
+    width: 100px;    
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #fded09d8; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #1aa; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(165, 8, 152); 
+  }
+
+  
